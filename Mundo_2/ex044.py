@@ -1,0 +1,37 @@
+print('\033[;33m{:=^50}\033[m'.format(' LOJAS XUIM '))
+produto = float(input('Digite o preço do produto: R$ '))
+print('\033[0;33m-\033[m' * 50)
+print('- (1) à vista(dinheiro/cheque): 10% de desconto')
+print('- (2) à vista(cartão): 5% de desconto')
+print('- (3) em até 2 X no cartão: preço normal')
+print('- (4) em 3 X ou mais no cartão: 20% de juros')
+print('\033[0;33m-\033[m' * 50)
+condicao = int(input('DIGITE A OPÇÃO: '))
+print('\033[0;33m-\033[m' * 50)
+if condicao == 1:
+    operacao = produto - (produto * 10 / 100)
+    print('Valor do produto: R$ {:.2f}'.format(produto))
+    print('Opção de compra: "À VISTA"')
+    print('Desconto aplicado: 10%')
+    print('Valor total da compra: R$ {:.2f}'.format(operacao))
+elif condicao == 2:
+    operacao = produto - (produto * 5 / 100)
+    print('Valor do produto: R$ {:.2f}'.format(produto))
+    print('Desconto aplicado: 5%')
+    print('Valor da parcela: R$ {:.2f}'.format(parcela))
+    print('Valor total da compra: R$ {:.2f}'.format(operacao))
+elif condicao == 3:
+    print('Valor do produto: R$ {:.2f}'.format(produto))
+    print('Opção de compra: "PARCELADO EM 2X"')
+    print('Desconto aplicado: Sem Desconto')
+    print('Valor da parcela: R$ {:.2f}'.format(produto / 2))
+    print('Valor total da compra: R$ {:.2f}'.format(produto))
+elif condicao == 4:
+    operacao = produto + (produto * 20 / 100)
+    print('Valor do produto: R$ {:.2f}'.format(produto))
+    print('Opção de compra: "PARCELADO EM 3X ou mais"')
+    print('Juros aplicado: 20%')
+    print('Valor total da compra: R$ {:.2f}'.format(operacao))
+else:
+    print('Opção de pagamento inválida. Digite novamente')
+
